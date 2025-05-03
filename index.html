@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+          opacity: 1;
+          transition: opacity 0.3s ease;
+        }
+      
+        body.fade-out {
+          opacity: 0;
+        }
+      </style>
+      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>electomars</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body></body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+
+    <img src="images/electromars.jpg" alt="Product Image" width="300">
+    <h1>Welcome to Electro Mars</h1>
+
+    <script src="script.js"></script> <!-- Link to JavaScript file -->
+    <script>
+        document.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", function (e) {
+            const href = link.getAttribute("href");
+            if (href && !href.startsWith("#") && !href.startsWith("javascript")) {
+              e.preventDefault();
+              document.body.classList.add("fade-out");
+              setTimeout(() => {
+                window.location.href = href;
+              }, 500);
+            }
+          });
+        });
+      </script>
+      
+</body>
+</html>
+<a href="products.html">
+<button onclick="buyNow()">Buy Now</button>
+</a> 
+

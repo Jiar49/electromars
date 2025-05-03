@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+          opacity: 1;
+          transition: opacity 0.3s ease;
+        }
+      
+        body.fade-out {
+          opacity: 0;
+        }
+      </style>
+      
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p class="Playfair-Display">Email: electromars0@gmail.com</p>
+        <p class="Playfair-Display">Phone: +212 680-576220</p>
+        <p class="Playfair-Display">Phone: +212 698-163183</p>
+    </div>
+    <script>
+        document.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", function (e) {
+            const href = link.getAttribute("href");
+            if (href && !href.startsWith("#") && !href.startsWith("javascript")) {
+              e.preventDefault();
+              document.body.classList.add("fade-out");
+              setTimeout(() => {
+                window.location.href = href;
+              }, 500);
+            }
+          });
+        });
+      </script>
+      
+</body>
+</html>

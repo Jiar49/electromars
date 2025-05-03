@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+          opacity: 1;
+          transition: opacity 0.3s ease;
+        }
+      
+        body.fade-out {
+          opacity: 0;
+        }
+      </style>
+      
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+
+    <div class="container">
+        <h1>About Our Company</h1>
+        <p>We have been in business.</p>
+    </div>
+    <script>
+        document.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", function (e) {
+            const href = link.getAttribute("href");
+            if (href && !href.startsWith("#") && !href.startsWith("javascript")) {
+              e.preventDefault();
+              document.body.classList.add("fade-out");
+              setTimeout(() => {
+                window.location.href = href;
+              }, 500);
+            }
+          });
+        });
+      </script>
+      
+</body>
+</html>
